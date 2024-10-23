@@ -79,13 +79,13 @@ CREATE TABLE Employee_Audit (
     change_date DATETIME DEFAULT GETDATE()
 );
 
---b)Create a Trigger that logs changes to the Employee Table into an Employee_Audit Table
 INSERT INTO Employee2 (first_name, last_name, department, salary)
 VALUES
 ('Amit', 'Verma', 'IT', 70000),
 ('Priya', 'Sharma', 'HR', 62000),
 ('Rahul', 'Patel', 'Finance', 78000);
 
+--b)Create a Trigger that logs changes to the Employee Table into an Employee_Audit Table
 CREATE TRIGGER trg_EmployeeAudit
 ON Employee2
 FOR INSERT, UPDATE, DELETE
